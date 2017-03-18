@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "jquery": "registry:dt/jquery#1.10.0+20170123093700",
+    "lodash": "registry:global/lodash#4.0.0+20160723033700"
+  }
+}

@@ -1,0 +1,1 @@
+module.exports = Require('./src/AccordionSlider').AccordionSlider; 

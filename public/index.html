@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>YA React Accordion Slider</title>
+        <link href="css/AccordionSlider.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="container"></div>
+
+        <!-- Dependencies -->
+        <script src="../node_modules/react/dist/react.js"></script>
+        <script src="../node_modules/react-dom/dist/react-dom.js"></script>
+        <script src="../node_modules/lodash/lodash.js"></script>
+
+        <!-- Main -->
+        <script src="scripts/AccordionSlider.js"></script>
+        <script>
+            var a = ReactDOM.render(
+                        React.createElement(
+                            yaReact.AccordionSlider,{
+                                visible: true,
+                                responsive: true,
+                                data: [
+                                    {img: 'test-data/01.jpg',head: '01'},
+                                    {img: 'test-data/02.jpg',head: '02'},
+                                    {img: 'test-data/03.jpg',head: '03'},
+                                    {img: 'test-data/04.jpg',head: '04'},
+                                    {img: 'test-data/05.jpg',head: '05'},
+                                    {img: 'test-data/06.jpg',head: '06'},
+                                    {img: 'test-data/07.jpg',head: '07'},
+                                    {img: 'test-data/08.jpg',head: '08'},
+                                    {img: 'test-data/09.jpg',head: '09'},
+                                    {img: 'test-data/10.jpg',head: '10'},
+                                ]
+                            }
+                        ),
+                        document.getElementById('container')
+                    );
+        </script>
+    </body>
+</html>

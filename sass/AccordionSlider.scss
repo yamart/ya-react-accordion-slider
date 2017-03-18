@@ -1,0 +1,143 @@
+$ya-as-width: 100%;
+$ya-as-height: 700px;
+$ya-as-background: white;
+$ya-as-color:black;
+$ya-as-head-background:white;
+$ya-as-head-color: black;
+$ya-as-head-shadow-color: rgba(0,0,0,0.05);
+
+%trans {
+    -webkit-transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+    -o-transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+    transition: all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);    
+    -ms-transition:  all 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.accordion-slider {
+    background: $ya-as-background;
+    height: $ya-as-height;
+    width: $ya-as-width;
+
+    .as-holder {
+        display: block;
+        height: 100%;
+    }
+
+    .as-panels {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .as-panel {
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: 100%;
+        overflow: hidden;
+        color: $ya-as-color;
+
+        @extend %trans;
+
+        .as-panel-head {
+            position: absolute;
+            background: $ya-as-head-background;
+            color: $ya-as-head-color;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 1; 
+
+            @extend %trans;    
+
+            .as-head-inner {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                text-align: center;
+
+                h1 {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                    margin: 0;
+                }
+            }                                                
+        }
+
+        .as-panel-image {
+            height: 100%;
+            width: auto;
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }       
+
+        &[expanded="true"] {
+            .as-panel-head {
+                opacity: 0;
+            }
+        }
+    }
+
+    &[data-orientation="horizontal"] {
+        .as-panel {
+            .as-panel-head {  
+                -webkit-box-shadow: inset -20px 10px 50px 10px $ya-as-head-shadow-color;
+                -moz-box-shadow: inset -20px 10px 50px 10px $ya-as-head-shadow-color;
+                box-shadow: inset -20px 10px 50px 10px $ya-as-head-shadow-color;
+                -ms-box-shadow: inset -20px 10px 50px 10px $ya-as-head-shadow-color;
+
+                .as-head-inner {
+                    min-width: 300px;
+
+                    h1 {
+                        -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+                        -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+                        transform:  translateX(-50%) translateY(-50%) rotate(-90deg);    
+                        -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);    
+                    }              
+                } 
+            }
+        }        
+    }
+
+    &[data-orientation="vertical"] {
+        .as-panel {
+            width: 100%;
+            height: auto;
+            display: block;
+
+            .as-panel-head {   
+                -webkit-box-shadow: inset 0 -10px 40px 10px $ya-as-head-shadow-color;
+                -moz-box-shadow: inset 0 -10px 40px 10px $ya-as-head-shadow-color;
+                box-shadow: inset 0 -10px 40px 10px $ya-as-head-shadow-color;
+                -ms-box-shadow: inset 0 -10px 40px 10px $ya-as-head-shadow-color;
+                                    
+                .as-head-inner {
+                    h1 {
+                        -moz-transform: translateX(-50%) translateY(-50%);
+                        -webkit-transform: translateX(-50%) translateY(-50%);
+                        transform:  translateX(-50%) translateY(-50%);
+                        -ms-transform: translateX(-50%) translateY(-50%);    
+                    }              
+                } 
+            }
+
+            .as-panel-image {
+                height: auto;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    vertical-align: top;                                    
+                }
+            }
+        }  
+    }
+}
